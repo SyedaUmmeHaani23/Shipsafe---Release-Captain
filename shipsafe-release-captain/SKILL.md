@@ -78,8 +78,15 @@ repository.
 
 8. **Present and pause for approval.** Show: proposed version + reasoning
    (including any script overrides), interpreted blast-radius line, release
-   notes. Ask explicitly: "Approve publishing v<X.Y.Z>? (yes/no)." Do not
-   tag or publish without an explicit yes.
+   notes. Ask explicitly: "Approve publishing v<X.Y.Z>? (yes/no)."
+
+9. **On approval, publish in two steps.** First, use the create_or_update_file
+   GitHub tool to commit the release notes into CHANGELOG.md (this tool is
+   configured to require approval itself — a real, tool-level gate, not just
+   a prompt instruction). Second, once that commit succeeds, run `git tag
+   v<X.Y.Z> && git push origin v<X.Y.Z>` in the sandbox to create the actual
+   tag. Report back what was created, with links if available. Do not
+   attempt npm/PyPI publishing — out of scope.
 
 ## Files in this skill
 - `scripts/classify.py` — rough keyword-based triage only, not authoritative
@@ -88,6 +95,6 @@ repository.
 
 ## Guardrails
 - Never fabricate test results, commit data, or download numbers.
-- Never tag, push a tag, or publish without an explicit human "yes" after
-  step 8.
+- Never call create_or_update_file, tag, or push without an explicit human
+  "yes" after step 8.
 - Never print or log API keys/tokens.
