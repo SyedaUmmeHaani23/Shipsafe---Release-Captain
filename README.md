@@ -155,10 +155,9 @@ The human remains the final release authority.
 
 ## Demonstration Repository
 
-ShipSafe is demonstrated against a separate repository containing an
-intentionally messy release history:
+ShipSafe is demonstrated against a separate repository containing an intentionally messy release history.
 
-**Demo repository:** `SyedaUmmeHaani23/shipsafe-demo`
+**Demo repository:** [SyedaUmmeHaani23/shipsafe-demo](https://github.com/SyedaUmmeHaani23/shipsafe-demo)
 
 The demo repository contains:
 
